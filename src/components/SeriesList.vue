@@ -1,0 +1,47 @@
+<template>
+    <div class="col-2 px-3 py-3">
+        <img class="img-fluid" :src='`http://image.tmdb.org/t/p/w500/${propsSeries.poster_path}`'>
+        <div class="pt-2 ps-1"><h5>Serie</h5></div>
+        <div class="pb-1 ps-1"><h6>Title: {{propsSeries.name}}</h6></div>
+        <div class="pb-1 ps-1"><span>Vote: {{propsSeries.vote_average}}</span></div>
+        <div class="lingua ps-1"><span>Country: {{flagFunction()}}</span></div>
+    </div>
+    </template>
+    
+    <script>
+    export default {
+    name: "SeriesList",
+    props: {
+        propsSeries : Object
+    },
+    data(){
+        return{
+            flag: ""
+        }
+    },
+    methods: {
+        flagFunction(){
+            if (this.propsSeries.original_language == `it`){
+                return this.flag = '🇮🇹'
+            }else if(this.propsSeries.original_language == `en`){
+                return this.flag = '🇬🇧'
+            }else if(this.propsSeries.original_language == "es"){
+                return this.flag = "🇪🇸"
+            }else if(this.propsSeries.original_language == `ja`){
+                return this.flag = "🇯🇵"
+            }else if(this.propsSeries.original_language == "fr"){
+                return this.flag = "🇫🇷"
+            }
+        }
+    }
+    }
+    </script>
+    
+    <style lang="scss" scoped>
+    .pb-1 {
+    background-color: white;
+    }
+    .lingua {
+        background-color: red;
+    }
+    </style>
