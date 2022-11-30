@@ -2,7 +2,7 @@
   <header class="d-flex justify-content-between">
     <div class="netflix text-danger py-3 px-3"> <strong><H1>NETFLIX</H1></strong></div>
     <div class="input-group my-3 w-auto me-3">
-      <input type="text" class="form-control" v-model="InputUtente" placeholder="Tonight I wanna see..." aria-label="Recipient's username"
+      <input  @keyup="$emit(`emitSearch`, InputUtente)" type="text" class="form-control" v-model="InputUtente" placeholder="Tonight I wanna see..." aria-label="Recipient's username"
         aria-describedby="button-addon2">
       <button @click="$emit(`emitSearch`, InputUtente)" class="btn btn-outline-danger" type="button" id="button-addon2">Search</button>
     </div>
