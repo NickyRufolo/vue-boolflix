@@ -2,8 +2,8 @@
 <div class="col-2 px-3 py-3">
     <img class="img-fluid" :src='`http://image.tmdb.org/t/p/w500/${propsSeries.poster_path}`'>
     <div class="d-none">
-    <div class="pt-2 ps-1"><h5>Serie</h5></div>
-    <div class="pb-1 ps-1"><h6>Title: {{propsSeries.name}}</h6></div>
+    <div class="pt-2 ps-1"><h5>Series</h5></div>
+    <div class="pb-1 ps-1"><h6>{{propsSeries.name}}</h6></div>
     <div class="pb-1 ps-1"><strong>Vote: </strong>
         <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(propsSeries.vote_average / 2 > 0 || propsSeries.vote_average == '')?'star':'star-empty'"/>
         <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(propsSeries.vote_average / 2 > 1)?'star':'star-empty'" />
@@ -12,6 +12,7 @@
         <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(propsSeries.vote_average / 2 > 4)?'star':'star-empty'" />
     </div>
     <div class="lingua ps-1"><span>Country: {{flagFunction()}}</span></div>
+    <div class="title pb-1 ps-1"><p class="overview">{{propsSeries.overview}}</p></div>
 </div>
 </div>
 </template>
@@ -47,10 +48,10 @@
     
 <style lang="scss" scoped>
     .pb-1 {
-    background-color: white;
+        color: white
     }
     .lingua {
-        background-color: red;
+        background-color: white;
     }
     .star {
     color:gold

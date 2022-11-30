@@ -42,7 +42,12 @@ methods: {
             return this.flag = "🇫🇷"
         }
     }
-}
+},
+//creo axius per 
+// mounted(){
+//     axios.get(`https://api.themoviedb.org/3/movie/`+param+`/credits?api_key=<<api_key>>&language=en-US`)
+//     .then
+// }
 }
 </script>
 
